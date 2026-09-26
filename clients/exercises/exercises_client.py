@@ -2,6 +2,9 @@ from clients.api_client import APIClient
 from httpx import Response
 from typing import TypedDict
 
+from clients.private_http_builder import AuthenticationUserDict, get_private_http_client
+
+
 class GetExercisesQueryDict(TypedDict):
     courseId: str
 
@@ -38,3 +41,7 @@ class ExercisesClient(APIClient):
 
     def delete_exercise_api(self,exercises_id:str)-> Response:
         return self.client.delete(f"/api/v1/exercises/{exercises_id}")
+
+
+def get_exercises_client(user: AuthenticationUserDict)-> ExercisesClient:
+    return ExercisesClient(client = get_private_http_client(user))
