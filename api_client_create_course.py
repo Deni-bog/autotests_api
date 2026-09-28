@@ -27,9 +27,9 @@ files_client = get_files_client(authentication_user)
 courses_client = get_courses_client(authentication_user)
 
 create_file_request = CreateFileRequestDict(
-    filename =  "string",
-    directory = "string",
-    upload_file =  "string"
+    filename="image.png",
+    directory="string",
+    upload_file="./testdata/files/image.png"
 )
 
 create_file_response = files_client.create_file(create_file_request)

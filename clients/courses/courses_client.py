@@ -28,8 +28,9 @@ class CreateCourseRequestDict(TypedDict):
      estimatedTime: str
      previewFileId: str
      createdByUserId: str
+
 class CreateCourseResponseDict(TypedDict):
-    courses: Course
+    course: Course
 
 class UpdateCourseRequestDict(TypedDict):
     title: str | None
@@ -40,20 +41,21 @@ class UpdateCourseRequestDict(TypedDict):
 
 class CoursesClient(APIClient):
     def get_courses_api(self,query:GetCoursesQueryDict) -> Response:
-        return self.client.get("/api/v1/courses", params = query)
+        return self.get("/api/v1/courses", params = query)
 
     def get_course_api(self,course_id :str ) -> Response:
-        return self.client.get(f"/api/v1/courses/{course_id}")
+        return self.get(f"/api/v1/courses/{course_id}")
 
     def create_course_api(self,request:CreateCourseRequestDict) -> Response:
-         return self.client.post("f/api/v1/courses/", json=request)
+         return self.post("/api/v1/courses", json=request)
 
     def update_course_api(self,request: UpdateCourseRequestDict) -> Response:
-        return  self.client.patch("f/api/v1/courses/", json=request)
+        return  self.patch("/api/v1/courses", json=request)
 
     def dele_course_api(self,course_id:str)-> Response:
-        return self.client.delete(f"/api/v1/courses/{course_id}")
-    def create_course(self,request:CreateCourseRequestDict) -> CreateCourseResponseDict:
+        return self.delete(f"/api/v1/courses/{course_id}")
+
+    def create_course(self, request: CreateCourseRequestDict) -> CreateCourseResponseDict:
         response = self.create_course_api(request)
         return response.json()
 

@@ -14,7 +14,8 @@ def get_private_http_client(user: AuthenticationUserDict) -> Client:
     login_response = authentication_client.login(login_request)
     return Client(
         timeout=100,
-        base_url="http://192.168.0.10:8000",
+        # base_url="http://192.168.0.10:8000",
+        base_url="http://127.0.0.1:8000",
         headers={"Authorization": f"Bearer {login_response["token"]["accessToken"]}" }
     )
 
