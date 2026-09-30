@@ -13,7 +13,7 @@
  #    "estimatedTime": "string",
  #    "createdByUser": {
  #      "id": "string",
- #      "email": "user@example.com",
+ #      "email": "users@example.com",
  #      "lastName": "string",
  #      "firstName": "string",
  #      "middleName": "string"
@@ -64,8 +64,8 @@ course_default_model = CourseSchema(
     ),
     estimatedTime="1 week",
     createdByUser= UserSchema(
-        id = "user-id",
-        email="user@gmail.com",
+        id = "users-id",
+        email="users@gmail.com",
         lastName="bogatyrev",
         firstName="denis",
         middleName = "badr"
@@ -88,8 +88,8 @@ course_dict = {
     },
      "estimatedTime": "string",
      "createdByUser" : {
-        "id":"user-id",
-        "email": "user@gmail.com",
+        "id":"users-id",
+        "email": "users@gmail.com",
         "lastName":"bogatyrev",
         "firstName":"denis",
         "middleName" : "badr"
@@ -114,8 +114,8 @@ course_json = """{
     },
      "estimatedTime": "string",
      "createdByUser" : {
-        "id":"user-id",
-        "email": "user@gmail.com",
+        "id":"users-id",
+        "email": "users@gmail.com",
         "lastName":"bogatyrev",
         "firstName":"denis",
         "middleName" : "badr"

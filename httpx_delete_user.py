@@ -12,8 +12,8 @@
 # create_user_response = httpx.post("http://192.168.0.10:8000/api/v1/users", json=user_create_payload)
 # create_user_response_data = create_user_response.json()
 #
-# print("Create user data: ",create_user_response_data)
-# print("Create user Status code: ",create_user_response.status_code)
+# print("Create users data: ",create_user_response_data)
+# print("Create users Status code: ",create_user_response.status_code)
 #
 # login_payload = {
 #     "email": user_create_payload["email"],
@@ -30,6 +30,6 @@
 #     "Authorization" : f"Bearer {login_response_data["token"]["accessToken"]}"
 # }
 #
-# delete_user_response = httpx.delete(f"http://192.168.0.10:8000/api/v1/users/{create_user_response_data["user"]["id"]}",headers=delete_user_headers)
+# delete_user_response = httpx.delete(f"http://192.168.0.10:8000/api/v1/users/{create_user_response_data["users"]["id"]}",headers=delete_user_headers)
 #
-# print("delete user status_code:", delete_user_response.status_code)
+# print("delete users status_code:", delete_user_response.status_code)
