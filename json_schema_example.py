@@ -3,11 +3,10 @@ from jsonschema import validate
 
 schema = {
     "type":"object",
-    "properties":{
-        "name":{"type": "string"},
-        "age":{"type":"number"}
+    "properties": {
+        "username": {"type":  "string", "minLength":  5, "maxLength":  15},
     },
-    "required":["name"]
+    "required": ["username"]
 }
 
 data = {
