@@ -1,10 +1,5 @@
 import pytest
 
-
-# @pytest.fixture(autouse=True)
-# def send_analytics_data():
-#     print("[AUTOUSE] Оттправляем данные в сервс аналитики")
-
 @pytest.fixture(scope="session")
 def settings():
     print("[SESSION] иниициализируем настройки автотестов")
